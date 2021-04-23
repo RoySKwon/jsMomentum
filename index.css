@@ -1,9 +1,19 @@
 /* Moment extension CSS */
 
 body{
-    background-color: #ecf0f1;
+    background-color:#16a085;
 }
 
-.js-title{
-    color:#2ecc71;
+.js-clock{
+    color: #ecf0f1;
+    font-size: 30px;
 }
+.form,
+.grettings{
+    display: none;
+}
+
+.showing{
+    display: block;
+}
+
