@@ -1,6 +1,5 @@
-const form = document.querySelector(".js-form");
-// const input = document.querySelector("input");//ChangeTest
-const input = form.querySelector("input"); //ChangeTest
+const userForm = document.querySelector(".js-form");
+const userInput = userForm.querySelector(".js-name");
 
 const greeting = document.querySelector(".js-greetings");
 
@@ -17,21 +16,21 @@ function saveName(text) {
 //Prevent redrow submit Function
 function handleSubmit(event) {
   event.preventDefault();
-  const currentValue = input.value;
+  const currentValue = userInput.value;
   console.log(currentValue);
   paintGreeting(currentValue);
   saveName(currentValue);
 }
 
 function askForName() {
-  form.classList.add(SHOWING_CLASS_NAME);
-  form.addEventListener("submit", handleSubmit);
+  userForm.classList.add(SHOWING_CLASS_NAME);
+  userForm.addEventListener("submit", handleSubmit);
 }
 
 function paintGreeting(text) {
   greeting.innerText = `Guten Tag, ${text}`;
   // greeting.classList.remove(SHOWING_CLASS_NAME);
-  form.classList.remove(SHOWING_CLASS_NAME);
+  userForm.classList.remove(SHOWING_CLASS_NAME);
   greeting.classList.add(SHOWING_CLASS_NAME);
 }
 function loadName() {
@@ -39,12 +38,13 @@ function loadName() {
 
   if (currentUser === null) {
     askForName();
-    console.log("NO Name");
+    // console.log("NO Name");
   } else {
-    console.log("Have Name");
+    // console.log("Have Name");
     paintGreeting(currentUser);
   }
 }
+
 function init() {
   loadName();
 }
